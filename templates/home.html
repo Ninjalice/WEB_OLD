@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+   
+{% block head %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<script src="{{ url_for('static', filename='js/maps.js') }}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdJE1HGHH8fzMZqSSe1k-9fvJhDxw6fwg&callback=myMap" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.0/d3.min.js"></script>
+{% endblock %}
+{% extends 'layout.html' %} {% block content %}
+
+<div class="granja" style="font-family:Raleway, sans-serif;"id="home">  
+  <div class="Contact-text" style="font-family:Raleway, sans-serif;" >
+    <h1 class ="animated rubberBand " style="font-size:50px">Hola soy Endika Aguirre 👋 </h1>
+    <h2 class ="animated rubberBand ">Y esta es mi pagina web</h2>
+    <a href="#contact" class="btn btn-outline-light" id="Contact_button"role="button" aria-pressed="true" >Contactame</a>
+  </div>
+</div>
+
+<div class="Studying" style="font-family:Raleway, sans-serif;">
+  <h1>YO:</h1>
+  <p>  
+
+    Siempre me ha interesado la programación y siempre quise crear un
+    página web. Ese interés me llevó a comenzar a aprender lenguajes de programación como
+    Python y a adentrarme en este mundo. Dedico mucho tiempo a crear 
+    software y proyectos electrónicos, así como tomar hermosas fotos.
+  </p>
+</div>
+
+<div class="reallygood" >
+
+  <p class="w3-large w3-center w3-padding-16" >Mis habilidades:</p>
+  <p class="w3-wide" style="margin-top: 15px;"><i class="fa fa-camera"></i> Fotografo</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:70%">70%</div>
+  </div>
+  <p class="w3-wide" style="margin-top: 15px;"><i class="fa fa-laptop"></i> Diseño web</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+  </div>
+  <p class="w3-wide" style="margin-top: 15px;"><i class="fa fa-photo"></i> Lightroom</p>
+  <div class="w3-light-grey">
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+  </div>  
+</div>
+
+<!--
+<div class="w3-content w3-container w3-padding-64" id="about" >
+  <h1 class="w3-center">About me</h3>
+  <h4 class="w3-center"><em>More info about me here.</em></h4>
+  <h5 class="w3-center"><em></em></h4>
+  
+</div>
+-->
+<div class="Mapa">
+  <h1 class="w3-center">De donde soy ❓</h3>
+  <h4 class="w3-center"><em>De un pueblo situado en Navarra, llamado Villava.</em></h4>
+  <div id="googlemap" style="width:100%;height:400px;"></div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="gear" >
+  <h1 class="w3-center">Mis herramientas</h3>
+  <h4 class="w3-center"><em>Aquí tienes mas información sobre todas mis herramientas y programas que suelo usar.</em></h4>
+  <ul>
+  <li>PC:
+    <ul>
+      <li>CPU: <a target="_blank" href="https://www.pccomponentes.com/intel-core-i3-8100-36ghz-box">Intel i3 8100</a></li>
+      <li>GPU: <a target="_blank" href="https://www.pccomponentes.com/gigabyte-gtx-1060-windforce-oc-3-gb-gddr5">GTX 1060</a></li>
+      <li>RAM: <a target="_blank" href="https://www.pccomponentes.com/corsair-vengeance-lpx-ddr4-3200-pc4-25600-8gb-2x4gb-cl16"> Corsair 8gb DDR4 3200mhz</a></li>
+      <li>Motherboard: <a target="_blank" href="https://www.pccomponentes.com/msi-z370-pc-pro">MSI Z370 PC Pro</a> </li>
+      <li>Case: <a target="_blank" href="https://www.pccomponentes.com/nzxt-s340-usb-3-0-con-ventana-blanca">NZXT s340</a></li>      
+    </ul>
+  </li>
+  <li>Camara:
+    <ul>
+      <li>Camara:<a target="_blank" href="https://www.amazon.es/Canon-EOS-800D-Pantalla-Bluetooth/dp/B06X6LMVFW/ref=sr_1_2?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=800d&qid=1583676603&sr=8-2">Canon 800d 24Mpx</a></li>
+      <li>Lente de la camara: <a target="_blank" href="https://www.amazon.es/Canon-EF-S-18-55-distancias-revestimientosque/dp/B0055S9SD2/ref=sr_1_6?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&keywords=Canon+EF-S+18-55+mm+f%2F4-5.6+IS+STM&qid=1583676618&sr=8-6">Canon 18-55mm f/4-5.6 IS STM</a></li>      
+    </ul>
+  </li>
+  <li>Otros:</li>
+   <ul>
+      <li>Edicion de fotos: <a target="_blank" href="https://www.adobe.com/es/products/photoshop-lightroom.html">Lightroom</a> and <a target="_blank" href="https://www.adobe.com/es/products/photoshop.html#">Photoshop</a></li>
+           
+    </ul>
+</ul>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  <h1 class="w3-center"> ☎️ CONTACTAME ☎️ </h3>
+  <h4 class="w3-center"><em>No dudes en contactar conmigo</em></h4> 
+  
+  <div class="w3-row w3-padding-32 w3-section">
+    <div class="w3-col m4 w3-container">
+      <img src="../static/Images/background.jpg" class="w3-image w3-round" style="width:100%">
+    </div>
+    <div class="w3-col m8 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Atarrabia,Navarra,ES<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Telefono: +34 601 27 56 18<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: eaguirregu1@educacion.navarra.es<br>
+        <i class="fa fa-file-pdf-o fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <a target="_blank" href="../static/Others/CURRICULUM.pdf">Haz clic aquí para ver mi CURRICULUM</a>
+      </div>
+      <!--
+      <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+      
+      <form action="../contactform.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+          </div>
+          <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+          </div>
+        </div>
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <button class="w3-button w3-black w3-right w3-section" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </form>
+      -->
+    </div>
+  </div>
+</div>
+{% endblock %}
