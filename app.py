@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def homee():
-    return render_template('home.html')
+    return render_template('comingsoon.html')
 
-
+"""
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
@@ -27,9 +27,9 @@ def about():
 @app.route('/hello-there!!')
 def hello_there():
     return render_template('hellothere.html')
-
+"""
 @app.errorhandler(404)
-def page_not_found(error):
+def page_not_found(error):    
     return render_template('page_not_found.html'), 404
 
 
